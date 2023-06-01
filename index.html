@@ -3,48 +3,95 @@
   <head>
     <meta charset="UTF-8">
     <title>Time, Date, and Weather</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/weather.svg" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      h1 {
+        font-size: 48px;
+        margin: 0;
+      }
+      
+      p {
+        font-size: 24px;
+        margin: 0;
+      }
+      
+      body {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      
+      body.dark-mode {
+        background-color: #333;
+        color: #f0f0f0;
+      }
+      
+      #toggle-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
   </head>
-<body>
-
-  <div class="header">
-    <span><img src="./img/weather.png" alt="partly-cloudy-day"></span>
-    <!-- <span><img width="96" height="96" src="https://img.icons8.com/fluency/96/partly-cloudy-day.png" alt="partly-cloudy-day"/></span> -->
-    <h1></span>Weather App</h1>
-  </div>
-
+  <body>
     <div id="container">
-      <div id="DT">
-        <h2 id="time"></h2>
-        <p id="date"></p>
-      </div>
-
-      <div id="form">
-        <form onsubmit="return false;">
-          <input type="text" id="city" name="city" placeholder="Enter city name">
-          <button type="submit" onclick="getWeather()">Enter</button>
-          <button id="clear" type="button" onclick="clearSearch()">Clear</button>
-        </form><br>
-      </div>
-
-      <div id="weather">
-        <p id="cityName"></p>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="wind"></p>
-        <p id="description"></p>
-      </div>
+      <h1 id="time"></h1>
+      <p id="date"></p>
+      <p id="weather"></p>
+      <form onsubmit="return false;">
+        <input type="text" id="city" name="city" placeholder="Enter city name">
+        <button type="submit" onclick="getWeather()">Get Weather</button>
+        <button type="button" onclick="clearInput()">Clear</button>
+      </form>
     </div>
-  
-    <footer>
-      <p>Created by <a target="_blank" href="https://github.com/nithinK-142">Nithin</a></p>
-   </footer>
 
-    <script src="script.js"></script>
+    <button id="toggle-button" onclick="toggleMode()">Toggle Mode</button>
+    
+    <script>
+      function toggleMode() {
+        const body = document.querySelector('body');
+        body.classList.toggle('dark-mode');
+      }
+      function clearInput() {
+        document.getElementById("city").value = "";
+      }
 
+      
+      // Get the current time and display it
+      var currentTime = moment().tz("{your_time_zone}").format("h:mm:ss A");
+      $("#time").text(currentTime);
+      
+      // Get the current date and display it
+      var currentDate = moment().tz("{your_time_zone}").format("dddd, MMMM Do YYYY");
+      $("#date").text(currentDate);
+      
+      // Get the weather for the specified city and display it
+      function getWeather() {
+        var apiKey = "API_KEY";
+        var city = $('#city').val();
+        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+        $.getJSON(apiUrl, function(data) {
+          var temp = data.main.temp;
+          var weather = data.weather[0].description;
+          var weatherText = "Current temperature in " + city + ": " + temp + "°C and " + weather + ".";
+          $("#weather").text(weatherText);
+        });
+      }
+      
+      // Update the time every second
+      setInterval(function() {
+        var currentTime = moment().tz("{your_time_zone}").format("h:mm:ss A");
+        $("#time").text(currentTime);
+      }, 1000);
+    </script>
   </body>
 </html>
