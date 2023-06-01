@@ -1,42 +1,73 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
 body {
-  background-color:  #333;
+  background-color:  rgb(38, 42, 43);
   color: #f0f0f0;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-h1 {
+
+h1{
+  font-size: 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 48px;
-  padding: 20px 0;
+  padding: 18px 0;
   background-image: linear-gradient(to right, #f44336, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.header img {
+  margin-right: 10px;
+}
+
 #container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 30vh;
 }
 
-h2 {
+#DT {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+
+#DT h2 {
   font-size: 48px;
   margin: 0;
   padding: 20px 0;
+  text-align: center;
 }
 
-p {
-  font-size: 24px;
-  margin: 0;
+#DT p{
+  font-size: 20px;
 }
 
 form {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 input[type="text"] {
@@ -45,6 +76,10 @@ input[type="text"] {
   border: none;
   border-radius: 4px;
   margin-right: 10px;
+}
+
+input {
+  width: 220px;
 }
 
 form button {
@@ -59,5 +94,51 @@ form button {
 }
 
 #weather {
-  margin-top: 20px;
+  display: none;
+  margin-top: 10px;
+  background-color: rgb(24, 26, 27);
+  padding: 30px 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#weather p {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#cityName {
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#temperature::before,
+#humidity::before,
+#wind::before,
+#description::before {
+  content: "\2022";
+  display: inline-block;
+  margin-right: 8px;
+  color: #2196f3;
+}
+
+
+/* footer */
+footer {
+  margin-top: auto;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  height: 25px;
+}
+
+footer p {
+  font-family: 'Lucida Sans';
+}
+
+footer a {
+  color: #bf1e1e;
+  text-decoration: none;
+  font-size: 15px;
 }
