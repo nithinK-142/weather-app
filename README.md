@@ -1,7 +1,7 @@
 # Weather App
 
 This is a simple weather application that displays the current time, date, and weather information for a specified city.
-[Click Here.](https://weather-app0101.netlify.app/)
+[Click Here.](https://openweatherapp0.netlify.app/)
 
 ## Features
 
