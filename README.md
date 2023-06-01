@@ -28,16 +28,16 @@ This is a simple weather application that displays the current time, date, and w
 
 ## Usage
 
-1.Enter the name of a city in the input field.
+1. Enter the name of a city in the input field.
 
-2.Click the "Enter" button to retrieve the weather info.
+2. Click the "Enter" button to retrieve the weather info.
 
-3.The weather information will be displayed, including the temperature,
- humidity, wind speed, and description.
+3. The weather information will be displayed, including the temperature,
+   humidity, wind speed, and description.
 
-4.An icon representing the weather condition will also be displayed.
+4. An icon representing the weather condition will also be displayed.
 
-5.To clear the search and reset the display, click "Clear" button..
+5. To clear the search and reset the display, click "Clear" button..
 
 ## Credits
 
