@@ -26,7 +26,7 @@ function getWeather() {
     return;
   }
 
-  var apiKey = "";
+  var apiKey = "API_KEY";
 
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
 

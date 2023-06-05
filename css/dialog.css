@@ -1,20 +1,27 @@
 dialog {
-    opacity: 0;
-    scale: 0;
-    display: block;
-    transition: all 0.5s;
-    padding: 10px;
-    margin-top: 200px;
-    margin-left: 500px;
-   }
+opacity: 0;
+scale: 0;
+display: block;
+transition: all 0.5s;
+padding: 10px;
+margin-top: 200px;
+margin-left: 500px;
+}
 
-   dialog[open] {
-    opacity: 1;
-    scale: 2;
-   }
+dialog[open] {
+opacity: 1;
+scale: 1.5;
+}
 
-   dialog button {
-   cursor: pointer;
-   padding: 4px;
-   margin-left: 250px;
-   }
+dialog button {
+cursor: pointer;
+padding: 4px;
+margin-left: 250px;
+color: black;
+background-color: white;
+}
+
+dialog button:hover {
+    color: white;
+    background-color: black;
+}
