@@ -12,9 +12,8 @@
   </head>
 <body>
 
-  <div class="header" id="dialogBtn">
+  <div class="header" id="dialog-open">
     <span><img src="./img/weather.png" alt="partly-cloudy-day"></span>
-    <!-- <span><img width="96" height="96" src="https://img.icons8.com/fluency/96/partly-cloudy-day.png" alt="partly-cloudy-day"/></span> -->
     <h1></span>Weather App</h1>
   </div>
 
@@ -33,43 +32,41 @@
       </div>
 
       <div id="weather">
-
         <div>
-          <span><img id="weatherIcon" src="" alt="Weather Icon"><h2 id="cityName"></h2></span>
+          <span><img id="weatherIcon" alt="Weather Icon"><h2 id="cityName"></h2></span>
         </div>
         
         <div id="winfo">
           <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="wind"></p>
-        <p id="description"></p>
+          <p id="humidity"></p>
+          <p id="wind"></p>
+          <p id="description"></p>
         </div>
       </div>
     </div>
 
     <dialog id="about">
-      <h3><pre>Weather App
+      <h3><pre><strong><h2>Weather App</h2></strong>
 This is a simple weather application that displays the current time, 
 date, and weather information for a specified city.
 
-Usage
-1.Enter the name of a city in the input field.
+   Usage
+-> Enter the name of a city in the input field.
 
-2.Click the "Enter" button to retrieve the weather info.
+-> Click the "Enter" button to retrieve the weather info.
 
-3.The weather information will be displayed, including the temperature,
- humidity, wind speed, and description.
+-> The weather information such as temperature, humidity, wind speed
+   and description will be displayed.
 
-4.An icon representing the weather condition will also be displayed.
+-> An icon representing the weather condition will also be displayed.
 
-5.To clear the search and reset the display, click "Clear" button.
+-> To clear the search and reset the display, click "Clear" button.
       </pre></h3>
-      <button id="btn">alright!</button>
   </dialog>
   
     <footer>
-      <p>Created by <a target="_blank" href="https://github.com/nithinK-142">Nithin</a></p>
-   </footer>
+      <a href="https://github.com/nithinK-142/weather-app" target="_blank" rel="noopener noreferrer"> <img id="git" src="img/git.png" alt="git"> </a>
+    </footer>
 
     <script src="./js/script.js"></script>
     <script src="./js/dialog.js"></script>

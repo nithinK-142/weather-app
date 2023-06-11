@@ -1,27 +1,21 @@
 dialog {
-opacity: 0;
-scale: 0;
-display: block;
-transition: all 0.5s;
-padding: 10px;
-margin-top: 200px;
-margin-left: 500px;
+    opacity: 0;
+    scale: 0;
+    display: block;
+    padding: 10px;
+    margin: auto;
 }
 
 dialog[open] {
-opacity: 1;
-scale: 1.5;
+    background-color: gainsboro;
+    opacity: 1;
+    scale: 1.4;
+    transition: all 0.4s;
+    box-shadow: 0 0 1em rgb(0, 0, 0 / .3);
+    border: none;
+    outline: none;
 }
 
-dialog button {
-cursor: pointer;
-padding: 4px;
-margin-left: 250px;
-color: black;
-background-color: white;
-}
-
-dialog button:hover {
-    color: white;
-    background-color: black;
+strong {
+    text-align: center;
 }

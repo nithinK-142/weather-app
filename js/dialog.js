@@ -1,21 +1,14 @@
-const dialog = document.getElementById('dialogBtn');
+const dialog = document.getElementById('dialog-open');
 const about = document.getElementById('about');
-const btn = document.getElementById('btn');
 
-dialog.addEventListener('click', function () {
+dialog.addEventListener('click', () => {
     document.body.style.filter = "blur(5px)";
     about.showModal();
-
-    // setTimeout(function () {
-    //     document.body.style.filter = "none";
-    //     about.close();
-    // }, 5000); 
 });
 
-document.addEventListener('click', function (event) {
-    if (event.target === btn || (event.target !== dialog && !dialog.contains(event.target))) {
+document.addEventListener('click', (event) => {
+    if (!dialog.contains(event.target)) {
         document.body.style.filter = "none";
         about.close();
     }
 });
-
