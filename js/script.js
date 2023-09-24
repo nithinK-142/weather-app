@@ -1,6 +1,10 @@
 // Get the current date
 var currentDate = moment().format("dddd, MMMM Do YYYY");
 
+//Page onload
+var initialLoad = $('#city').val("New York");
+getWeather();
+
 // Function to update the time
 function updateTime() {
   var currentTime = moment().format("h:mm:ss A");
